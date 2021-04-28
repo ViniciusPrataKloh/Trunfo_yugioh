@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "clientePilha", "clientePilha\clientePilha.csproj", "{244DB028-BBCD-4637-9B9D-2EAD0D8D3DBA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{244DB028-BBCD-4637-9B9D-2EAD0D8D3DBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{244DB028-BBCD-4637-9B9D-2EAD0D8D3DBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{244DB028-BBCD-4637-9B9D-2EAD0D8D3DBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{244DB028-BBCD-4637-9B9D-2EAD0D8D3DBA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
