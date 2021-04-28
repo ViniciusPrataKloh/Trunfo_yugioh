@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="getCardOponente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCardOponenteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCardOponenteResult" type="tns:Card" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Card">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Atk" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Def" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getStack">
+        <s:complexType />
+      </s:element>
+      <s:element name="getStackResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getStackResult" type="tns:ArrayOfCard" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCard">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Card" nillable="true" type="tns:Card" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="enviaCarta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="carta" type="tns:Card" />
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="enviaCartaResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getCardOponenteSoapIn">
+    <wsdl:part name="parameters" element="tns:getCardOponente" />
+  </wsdl:message>
+  <wsdl:message name="getCardOponenteSoapOut">
+    <wsdl:part name="parameters" element="tns:getCardOponenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="getStackSoapIn">
+    <wsdl:part name="parameters" element="tns:getStack" />
+  </wsdl:message>
+  <wsdl:message name="getStackSoapOut">
+    <wsdl:part name="parameters" element="tns:getStackResponse" />
+  </wsdl:message>
+  <wsdl:message name="enviaCartaSoapIn">
+    <wsdl:part name="parameters" element="tns:enviaCarta" />
+  </wsdl:message>
+  <wsdl:message name="enviaCartaSoapOut">
+    <wsdl:part name="parameters" element="tns:enviaCartaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WsOperacoesSoap">
+    <wsdl:operation name="getCardOponente">
+      <wsdl:input message="tns:getCardOponenteSoapIn" />
+      <wsdl:output message="tns:getCardOponenteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getStack">
+      <wsdl:input message="tns:getStackSoapIn" />
+      <wsdl:output message="tns:getStackSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="enviaCarta">
+      <wsdl:input message="tns:enviaCartaSoapIn" />
+      <wsdl:output message="tns:enviaCartaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WsOperacoesSoap" type="tns:WsOperacoesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getCardOponente">
+      <soap:operation soapAction="http://tempuri.org/getCardOponente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStack">
+      <soap:operation soapAction="http://tempuri.org/getStack" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="enviaCarta">
+      <soap:operation soapAction="http://tempuri.org/enviaCarta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WsOperacoesSoap12" type="tns:WsOperacoesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getCardOponente">
+      <soap12:operation soapAction="http://tempuri.org/getCardOponente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStack">
+      <soap12:operation soapAction="http://tempuri.org/getStack" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="enviaCarta">
+      <soap12:operation soapAction="http://tempuri.org/enviaCarta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WsOperacoes">
+    <wsdl:port name="WsOperacoesSoap" binding="tns:WsOperacoesSoap">
+      <soap:address location="http://localhost:3823/WsOperacoes.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WsOperacoesSoap12" binding="tns:WsOperacoesSoap12">
+      <soap12:address location="http://localhost:3823/WsOperacoes.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
