@@ -16,7 +16,7 @@ namespace WsTeste
             // ConexÃ£o BD para resgatar id carta.
 
             //String de conexÃ£o:
-            string strC = @"server=localhost; user id=root; password=downhill1234; database=final_pav";
+            string strC = @"server=localhost; user id=root; password=######; database=final_pav";
 
             //Objeto que faz a conexÃ£o com o Banco de Dados:
             MySqlConnection connection = new MySqlConnection(strC);
@@ -58,7 +58,7 @@ namespace WsTeste
         {
 
             //String de conexÃ£o:
-            string strC = @"server=localhost; user id=root; password=downhill1234; database=final_pav";
+            string strC = @"server=localhost; user id=root; password=######; database=final_pav";
 
             //Objeto que faz a conexÃ£o com o Banco de Dados:
             MySqlConnection connection = new MySqlConnection(strC);
@@ -108,7 +108,7 @@ namespace WsTeste
             // ConexÃ£o BD para resgatar id carta.
 
             //String de conexÃ£o:
-            string strC = @"server=localhost; user id=root; password=downhill1234; database=final_pav";
+            string strC = @"server=localhost; user id=root; password=######; database=final_pav";
 
             //Objeto que faz a conexÃ£o com o Banco de Dados:
             MySqlConnection connection = new MySqlConnection(strC);
